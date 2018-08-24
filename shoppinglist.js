@@ -22,16 +22,16 @@ $(addListItem());
 
 
 
-function checkListItem() {
+// function checkListItem() {
 
-}
-
-
+// }
 
 
-function deleteListItem() {
 
-}
+
+// function deleteListItem() {
+
+// }
 
 
 
@@ -57,10 +57,21 @@ function generateLi(item, index) {
 
 
 
-function renderShoppingList() {
-  const elements = store.map((data, dataIndex) => {
+function generateShoppingList(items) {
+  const elements = items.map((data, dataIndex) => {
     return (generateLi(data, dataIndex));
   });
   return elements.join('');
 }
+
+
+
+const ourHTML = $('.shopping-list');
+
+function renderShoppingList() {
+  const HTML = generateShoppingList(store);
+  ourHTML.html(HTML);
+  // $('.shopping-list').html(generateShoppingList(store));
+}
+
 $(renderShoppingList());
